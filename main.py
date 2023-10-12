@@ -1,17 +1,14 @@
 
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+def linear_search_product(product_list, target_product):
+    indices = []
+    for i in range(len(product_list)):
+        if product_list[i] == target_product:
+            indices.append(i)
+    return indices
 
-# Input from the user
-num = int(input("Enter a number: "))
-
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-elif num == 0:
-    print("The factorial of 0 is 1")
-else:
-    result = factorial(num)
-    print(f"The factorial of {num} is {result}")
+# Sample usage
+if __name__ == "__main__":
+    products = ["apple", "banana", "orange", "apple", "grape"]
+    target = "apple"
+    result = linear_search_product(products, target)
+    print(result)
